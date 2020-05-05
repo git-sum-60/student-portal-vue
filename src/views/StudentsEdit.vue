@@ -1,8 +1,8 @@
 <template>
   <div class="portal-edit">
-    <h1>Edit Resume and Capstone Info</h1>
+    <h1>Edit Resume and Capstone Data</h1>
     <hr>
-    <h2> Edit Personal Info </h2>
+    <h4> Edit Personal Info </h4>
     <button v-on:click="togglePersonalInfo()"> Show/Hide </button>
       <div v-if="personal_info === true">
         <p>First Name: <input type="text" v-model="student.first_name"></p>
@@ -16,30 +16,47 @@
         <p>Online Resume URL: <input type="text" v-model="student.online_resume_url"></p>
         <p>Github URL: <input type="text" v-model="student.github_url"></p>
         <p>Photo URL: <input type="text" v-model="student.photo_url"></p>
+        <button>Submit</button>
       </div>
     <hr>
-    <h2> Add Experience </h2>
+    <h4> Add Experience </h4>
     <button v-on:click="togglePersonalExperience()"> Show/Hide </button>
       <div v-if="personal_experience === true">
-        In the personal experience edit
+        <p>Start Date: <input type="text" v-model="startDate"></p>
+        <p>End Date: <input type="text" v-model="endDate"></p>
+        <p>Job Title: <input type="text" v-model="jobTitle"></p>
+        <p>Company Name:<input type="text" v-model="companyName"></p>
+        <p>Details: <input type="text" v-model="details"></p>
+        <button>Submit</button>        
       </div>
     <hr>
-    <h2> Add Education </h2>
+    <h4> Add Education </h4>
     <button v-on:click="togglePersonalEducation()"> Show/Hide </button>
       <div v-if="personal_education === true">
-        In the personal education edit
+        <p>start_date: <input type="text" v-model="educationStartDate"></p>
+        <p>end_date: <input type="text" v-model="educationEndDate"></p>
+        <p>degree: <input type="text" v-model="degree"></p> 
+        <p>university: <input type="text" v-model="university"></p>
+        <p>details: <input type="text" v-model="educationDetails"></p>
+        <button>Submit</button>      
       </div>
     <hr>
-    <h2> Add Skill </h2>
+    <h4> Add Skill </h4>
     <button v-on:click="togglePersonalSkill()"> Show/Hide </button>
       <div v-if="personal_skill === true">
-        In the personal skill edit
+        <p>skill: <input type="text" v-model="skill"></p>
+        <button>Submit</button>
       </div>
     <hr>
-    <h2> Add Capstone </h2>
+    <h4> Add Capstone </h4>
     <button v-on:click="togglePersonalCapstone()"> Show/Hide </button>
       <div v-if="personal_capstone === true">
-        In the personal capstone edit
+        <p>name: <input type="text" v-model="capstoneName"></p>
+        <p>description: <input type="text" v-model="capstoneDescription"></p>
+        <p>url: <input type="text" v-model="capstoneUrl"></p>
+        <p>screenshot_url: <input type="text" v-model="capstoneScreenShotUrl"></p>
+        <p>student_id: <input type="text" v-model="capstoneStudentId"></p>
+        <button>Submit</button>
       </div>
     <hr>
   </div>
@@ -57,6 +74,22 @@ export default {
       personal_education: false,
       personal_skill: false,
       personal_capstone: false,
+      startDate: "",
+      endDate: "",
+      jobTitle: "",
+      companyName: "",
+      details: "",
+      educationStartDate: "",
+      educationEndDate: "",
+      degree: "",
+      university: "",
+      educationDetails: "",
+      skill: "",
+      capstoneName: "",
+      capstoneDescription: "",
+      capstoneUrl: "",
+      capstoneScreenShotUrl: "",
+      capstoneStudentId: ""
     };
   },
 
@@ -118,6 +151,13 @@ export default {
   }
 };
 </script>
+
+
+    t.string "name"
+    t.string "description"
+    t.string "url"
+    t.string "screenshot_url"
+    t.integer "student_id"
 
 
       
