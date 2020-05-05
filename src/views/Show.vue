@@ -19,11 +19,11 @@
     <p>Url: {{ student.url }}</p>
     <button v-bind:href="`/students/${student.id}/edit`">Edit</button>
     <h2>Experience</h2>
-    <p>Start Date:</p>
-    <p>End Date:</p>
-    <p>Job Title:</p>
-    <p>Company Name:</p>
-    <p>Details (one long text field)</p>
+    <p>Start Date: {{ student.start_date}}</p>
+    <p>End Date: {{ student.end_date }}</p>
+    <p>Job Title: {{ student.degree }}</p>
+    <p>Company Name: {{ student.university }}</p>
+    <p>Details:</p>
   </div>
 </template>
 
