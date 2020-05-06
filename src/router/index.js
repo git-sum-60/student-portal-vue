@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Show from "../views/Show.vue";
 import Login from "../views/Login.vue";
+import StudentsEdit from '../views/StudentsEdit.vue';
 
 Vue.use(VueRouter);
 
@@ -18,7 +19,7 @@ const routes = [
     component: Show,
   },
   {
-    path: "/login",
+    path: "/logins",
     name: "login",
     component: Login,
   },
@@ -31,7 +32,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/students/:id/edit",
+    path: "/students/edit",
     name: "students-edit",
     component: StudentsEdit,
   },

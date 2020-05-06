@@ -1,5 +1,6 @@
 <template>
   <div class="students-show">
+    <button v-bind:href="`/students/11/edit`">Edit</button>
     <h2>Resume Info</h2>
     <p>First name: {{ student.first_name }}</p>
     <p>Last Name: {{ student.last_name }}</p>
@@ -17,7 +18,6 @@
     <p>Name: {{ student.name }}</p>
     <p>Description:{{ student.description }}</p>
     <p>Url: {{ student.url }}</p>
-    <button v-bind:href="`/students/${student.id}/edit`">Edit</button>
     <h2>Experience</h2>
     <p>Start Date: {{ student.start_date}}</p>
     <p>End Date: {{ student.end_date }}</p>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 
 export default {
   data: function() {
@@ -46,10 +46,10 @@ export default {
     };
   },
   created: function() {
-    axios.get("/api/students/ + this.$route.params.id").then(response => {
-      console.log(response.data);
-      this.student = response.data;
-    });
+    // axios.get("/api/students/ + this.$route.params.id").then(response => {
+    //   console.log(response.data);
+    //   this.student = response.data;
+    // });
   },
   methods: {},
 };
