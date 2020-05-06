@@ -1,18 +1,20 @@
 <template>
   <div class="students-show">
-    <h2>Resume Info</h2>
-    <p>First name: {{ student.first_name }}</p>
-    <p>Last Name: {{ student.last_name }}</p>
-    <p>Email: {{ student.email }}</p>
-    <p>Phone Number: {{ student.phone_number }}</p>
-    <p>Short_bio: {{ student.short_bio }}</p>
-    <p>Linkedin Url: {{ student.linkedin_url }}</p>
-    <p>Twitter Handle: {{ student.twitter_handle }}</p>
-    <p>Personal Site Url: {{ student.personal_site_url }}</p>
-    <p>Online Resume Url: {{ student.online_resume_url }}</p>
-    <p>Github Url: {{ student.github_url }}</p>
-    <p>Photo Url: {{ student.photo_url }}</p>
-    <p>Online Resume Url: {{ student.online_resume_url }}</p>
+    <div v-if="currentStudent === student">
+      <h2>Resume Info</h2>
+      <p>First name: {{ student.first_name }}</p>
+      <p>Last Name: {{ student.last_name }}</p>
+      <p>Email: {{ student.email }}</p>
+      <p>Phone Number: {{ student.phone_number }}</p>
+      <p>Short_bio: {{ student.short_bio }}</p>
+      <p>Linkedin Url: {{ student.linkedin_url }}</p>
+      <p>Twitter Handle: {{ student.twitter_handle }}</p>
+      <p>Personal Site Url: {{ student.personal_site_url }}</p>
+      <p>Online Resume Url: {{ student.online_resume_url }}</p>
+      <p>Github Url: {{ student.github_url }}</p>
+      <p>Photo Url: {{ student.photo_url }}</p>
+      <p>Online Resume Url: {{ student.online_resume_url }}</p>
+    </div>
     <h2>Capstone</h2>
     <p>Name: {{ student.name }}</p>
     <p>Description:{{ student.description }}</p>
@@ -28,12 +30,13 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 
 export default {
   data: function() {
     return {
-      firstName: "firstName",
+      students: [],
+      firstName: "Nikki",
       lastName: "lastName",
       email: "email",
       phoneNumber: "phoneNumber",
@@ -42,7 +45,7 @@ export default {
       name: "name",
       description: "description",
       url: "",
-      student: {},
+      currentStudent: {},
     };
   },
   created: function() {

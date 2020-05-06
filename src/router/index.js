@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Show from "../views/Show.vue";
 import Login from "../views/Login.vue";
+import StudentsEdit from '../views/StudentsEdit.vue';
 
 Vue.use(VueRouter);
 
