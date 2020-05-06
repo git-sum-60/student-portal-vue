@@ -14,6 +14,7 @@
     <p>Github Url: {{ student.github_url }}</p>
     <p>Photo Url: {{ student.photo_url }}</p>
     <p>Online Resume Url: {{ student.online_resume_url }}</p>
+
     <h2>Capstone</h2>
     <p>Name: {{ student.name }}</p>
     <p>Description:{{ student.description }}</p>
@@ -33,7 +34,8 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      firstName: "firstName",
+      students: [],
+      firstName: "Nikki",
       lastName: "lastName",
       email: "email",
       phoneNumber: "phoneNumber",
@@ -42,7 +44,7 @@ export default {
       name: "name",
       description: "description",
       url: "",
-      student: {},
+      currentStudent: {},
     };
   },
   created: function() {

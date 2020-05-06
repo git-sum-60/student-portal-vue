@@ -43,6 +43,7 @@ export default {
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           localStorage.setItem("student_id", response.data.password_id);
+
           this.$router.push("/");
         })
         .catch(error => {
