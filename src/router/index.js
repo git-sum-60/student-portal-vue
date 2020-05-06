@@ -19,7 +19,7 @@ const routes = [
     component: Show,
   },
   {
-    path: "/login",
+    path: "/logins",
     name: "login",
     component: Login,
   },
@@ -32,7 +32,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/students/:id/edit",
+    path: "/students/edit",
     name: "students-edit",
     component: StudentsEdit,
   },
